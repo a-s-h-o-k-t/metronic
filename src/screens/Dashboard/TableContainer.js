@@ -1,25 +1,19 @@
 import { memo } from "react";
 import { Box, Grid, InputAdornment, Typography } from "@mui/material";
-import {
-  MuiButton,
-  MuiInputDatePicker,
-  MuiInputSelect,
-  MuiTextInput,
-  TableComp,
-} from "../../components";
+import { MuiButton, MuiTextInput, TableComp } from "../../components";
 import ProfileIcon from "../../assets/svgIcons/ProfileIcon.svg";
 import arrows from "../../assets/svgIcons/arrows.svg";
 import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
 
 const TableContainer = () => {
-  const dateList = [
-    { value: 1, label: "Today" },
-    { value: 2, label: "Yesterday" },
-    { value: 3, label: "This Week" },
-    { value: 4, label: "This Month" },
-    { value: 5, label: "Select Date" },
-  ];
+  // const dateList = [
+  //   { value: 1, label: "Today" },
+  //   { value: 2, label: "Yesterday" },
+  //   { value: 3, label: "This Week" },
+  //   { value: 4, label: "This Month" },
+  //   { value: 5, label: "Select Date" },
+  // ];
 
   return (
     <Box>
@@ -28,8 +22,7 @@ const TableContainer = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-        }}
-      >
+        }}>
         <MuiTextInput
           placeholder={"search"}
           sx={{
@@ -54,8 +47,7 @@ const TableContainer = () => {
             justifyContent: "center",
             alignItems: "center",
             gap: "20px",
-          }}
-        >
+          }}>
           <MuiButton
             title={"Export"}
             startIcon={<img src={arrows} alt="img" />}
@@ -76,11 +68,9 @@ const TableContainer = () => {
               gap: "30px",
               backgroundColor: "#F9F9F9",
               padding: "9px 12px",
-            }}
-          >
+            }}>
             <Typography
-              style={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
-            >
+              style={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}>
               Today
             </Typography>
             <Icon path={mdiChevronDown} color="#A1A5B7" size={1} />
@@ -130,11 +120,9 @@ const TableContainer = () => {
               gap: "30px",
               backgroundColor: "#F9F9F9",
               padding: "9px 12px",
-            }}
-          >
+            }}>
             <Typography
-              style={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
-            >
+              style={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}>
               Status
             </Typography>
             <Icon path={mdiChevronDown} color="#A1A5B7" size={1} />
