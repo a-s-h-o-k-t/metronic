@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Card, CardContent, Grid, Typography, styled } from "@mui/material";
 
-const StyledCard = styled(CardContent)(({ theme }) => ({
+const StyledCard = styled(CardContent)(() => ({
   display: "flex",
   flexDirection: "column",
   gap: "12px",
@@ -9,7 +9,7 @@ const StyledCard = styled(CardContent)(({ theme }) => ({
   lineHeight: "normal",
 }));
 
-const StyledTitle = styled(Typography)(({ theme }) => ({
+const StyledTitle = styled(Typography)(() => ({
   fontSize: "34px",
   fontWeight: 600,
   lineHeight: "34px",
@@ -39,16 +39,14 @@ const CardComp = ({ title, icon, subTitle, background, border }) => {
         borderBottom: "3px solid",
         borderBottomColor: border,
         borderRadius: "12px",
-      }}
-    >
+      }}>
       <StyledCard>
         <Grid
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-          }}
-        >
+          }}>
           <StyledTitle>{title}</StyledTitle>
           <Grid
             style={{
@@ -57,9 +55,8 @@ const CardComp = ({ title, icon, subTitle, background, border }) => {
               lineHeight: "0px",
               backgroundColor: background,
               borderRadius: "4px",
-            }}
-          >
-            <img src={icon} height={20} width={20} />
+            }}>
+            <img src={icon} alt="cardIcon" height={20} width={20} />
           </Grid>
         </Grid>
         <StyledSubTitle>{subTitle}</StyledSubTitle>

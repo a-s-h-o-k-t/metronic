@@ -1,6 +1,5 @@
 import { memo } from "react";
-import { useTheme } from "@mui/material/styles";
-import { MuiButton, MuiTextInput } from "../../components";
+import { MuiTextInput } from "../../components";
 import { Button, Checkbox, Divider, Grid, Typography } from "@mui/material";
 import Icon from "@mdi/react";
 import { mdiApple } from "@mdi/js";
@@ -9,7 +8,6 @@ import { useNavigate } from "react-router";
 
 const SignupPersonalInfo = () => {
   const navigate = useNavigate();
-  const theme = useTheme();
 
   return (
     <Grid
@@ -17,8 +15,7 @@ const SignupPersonalInfo = () => {
       xs={6}
       justifyContent="center"
       spacing={2}
-      sx={{ padding: "40px 0px" }}
-    >
+      sx={{ padding: "40px 0px" }}>
       <Grid item xs={12}>
         <Typography sx={{ color: "#181C32", fontSize: 24 }} align="center">
           Account Details
@@ -40,8 +37,7 @@ const SignupPersonalInfo = () => {
           }}
           variant="outlined"
           fullWidth
-          startIcon={<img src={google} width={20} height={20} />}
-        >
+          startIcon={<img src={google} alt="icon" width={20} height={20} />}>
           Sign in with Google
         </Button>
       </Grid>
@@ -56,8 +52,7 @@ const SignupPersonalInfo = () => {
           }}
           fullWidth
           variant="outlined"
-          startIcon={<Icon path={mdiApple} size={0.8} color={"#000000"} />}
-        >
+          startIcon={<Icon path={mdiApple} size={0.8} color={"#000000"} />}>
           Sign in with Apple
         </Button>
       </Grid>
@@ -89,8 +84,7 @@ const SignupPersonalInfo = () => {
       <Grid
         item
         xs={12}
-        sx={{ display: "flex", alignItems: "center", gap: "10px" }}
-      >
+        sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
         <Checkbox defaultChecked />
         <Typography sx={{ color: "#5E6278", fontSize: 13 }}>
           I Accept the
@@ -105,8 +99,7 @@ const SignupPersonalInfo = () => {
             textTransform: "none",
           }}
           variant="contained"
-          onClick={() => navigate("/dashboard")}
-        >
+          onClick={() => navigate("/dashboard")}>
           Continue
         </Button>
         <p style={{ textAlign: "center", color: "#A1A5B7", fontSize: 14 }}>

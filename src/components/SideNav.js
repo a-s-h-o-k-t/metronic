@@ -65,7 +65,7 @@ const SideNav = ({ tabItems }) => {
           value={item.path}
           component={Link}
           to={item?.path}
-          icon={<img src={item.icon} size={0.85} color="#A1A5B7" />}
+          icon={<img src={item.icon} alt="img" size={0.85} color="#A1A5B7" />}
           disableFocusRipple
           disableRipple
         />
@@ -81,8 +81,7 @@ const SideNav = ({ tabItems }) => {
       }}
       display="flex"
       flexDirection="column"
-      justifyContent="space-between"
-    >
+      justifyContent="space-between">
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <StyledTabs value={selectedTabValue} orientation="vertical">
           {getTabIconItems()}

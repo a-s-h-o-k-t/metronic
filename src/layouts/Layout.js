@@ -74,8 +74,7 @@ const Layout = () => {
         sx={{
           height: "100vh",
           display: "flex",
-        }}
-      >
+        }}>
         <StyledLeftContainer>
           <Box
             flex={1}
@@ -86,8 +85,7 @@ const Layout = () => {
               flexDirection: "column",
               alignItems: "center",
               gap: 120,
-            }}
-          >
+            }}>
             <img src={Logo} alt="mainLogo" />
             <StyledStepperWrapper>
               {StepperItems.length
@@ -115,15 +113,14 @@ const Layout = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 39,
-              }}
-            >
-              <a target="_blank" className="link" href="">
+              }}>
+              <a target="_blank" className="link" href="/">
                 Terms
               </a>
-              <a target="_blank" className="link" href="">
+              <a target="_blank" className="link" href="/">
                 Plans
               </a>
-              <a target="_blank" className="link" href="">
+              <a target="_blank" className="link" href="/">
                 Contact Us
               </a>
             </div>

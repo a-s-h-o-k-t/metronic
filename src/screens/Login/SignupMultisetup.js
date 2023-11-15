@@ -1,12 +1,10 @@
 import { memo, useState } from "react";
-import { useTheme } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import { AccountCard, MuiButton } from "../../components";
 import { mdiAccountBox, mdiBriefcaseVariant } from "@mdi/js";
 import { useNavigate } from "react-router";
 
 const SignupMultiSetup = () => {
-  const theme = useTheme();
   const navigate = useNavigate();
   const [selectedItm, setSelectedItm] = useState(1);
 
@@ -39,23 +37,20 @@ const SignupMultiSetup = () => {
         display: "flex",
         flexDirection: "column",
         gap: "35px",
-      }}
-    >
+      }}>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: "15px",
-        }}
-      >
+        }}>
         <Typography
           sx={{
             color: "#181C32",
             fontSize: 24,
             fontWeight: 600,
             lineHeight: "24px",
-          }}
-        >
+          }}>
           Choose an account type
         </Typography>
         <Typography
@@ -64,8 +59,7 @@ const SignupMultiSetup = () => {
             fontSize: 14,
             fontWeight: 500,
             lineHeight: "14px",
-          }}
-        >
+          }}>
           If you need more info, please visit our{" "}
           <span style={{ color: "#2884EF" }}>help page.</span>
         </Typography>
@@ -74,8 +68,7 @@ const SignupMultiSetup = () => {
         sx={{
           display: "flex",
           gap: "22px",
-        }}
-      >
+        }}>
         {cardItems.length
           ? cardItems.map((item, index) => {
               return (
