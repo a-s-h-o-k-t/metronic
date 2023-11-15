@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { AccountCard, MuiButton } from "../../components";
 import { mdiAccountBox, mdiBriefcaseVariant } from "@mdi/js";
 import { useNavigate } from "react-router";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 const SignupMultiSetup = () => {
   const navigate = useNavigate();
   const [selectedItm, setSelectedItm] = useState(1);
+  const theme = useTheme();
 
   const cardItems = [
     {
@@ -68,6 +69,9 @@ const SignupMultiSetup = () => {
         sx={{
           display: "flex",
           gap: "22px",
+          [theme.breakpoints.down("xs")]: {
+            flexDirection: "column",
+          },
         }}>
         {cardItems.length
           ? cardItems.map((item, index) => {
