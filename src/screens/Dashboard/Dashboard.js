@@ -7,8 +7,12 @@ import information_3 from "../../assets/svgIcons/information_3.svg";
 import { Grid, Typography } from "@mui/material";
 import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
+import TableContainer from "./TableContainer";
+
+// import { useTheme } from "@mui/material/styles";
 
 const Dashboard = () => {
+  // const theme = useTheme();
   const cardItems = [
     {
       title: "252",
@@ -47,17 +51,24 @@ const Dashboard = () => {
           display: "flex",
           flexDirection: "row-reverse",
           gap: "8px",
-          padding: "13px 12px",
-        }}>
+          alignItems: "center",
+        }}
+      >
         <Grid
           style={{
-            width: 116,
+            width: 140,
             display: "flex",
+            height: 38,
             alignItems: "center",
             justifyContent: "space-between",
-          }}>
+            backgroundColor: "#FFF",
+            borderRadius: "6px",
+            padding: "13px 12px",
+          }}
+        >
           <Typography
-            style={{ color: "#3F4254", fontSize: "12px", fontWeight: 600 }}>
+            style={{ color: "#3F4254", fontSize: "12px", fontWeight: 600 }}
+          >
             Today
           </Typography>
           <Icon
@@ -68,7 +79,8 @@ const Dashboard = () => {
           />
         </Grid>
         <Typography
-          style={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}>
+          style={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}
+        >
           Sort by
         </Typography>
       </Grid>
@@ -85,6 +97,15 @@ const Dashboard = () => {
             />
           );
         })}
+      </Grid>
+      <Grid
+        style={{
+          backgroundColor: "#FFF",
+          borderRadius: "12px",
+          padding: "30px",
+        }}
+      >
+        <TableContainer />
       </Grid>
     </Grid>
   );

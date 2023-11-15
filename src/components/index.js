@@ -6,3 +6,6 @@ export { default as SideNav } from "./SideNav";
 export { default as Stepper } from "./Stepper";
 export { default as AccountCard } from "./AccountCard";
 export { default as CardComp } from "./Card";
+export { default as TableComp } from "./Table";
+export { default as MuiInputDatePicker } from "./MuiInputDatePicker";
+export { default as MuiInputSelect } from "./MuiInputSelect";
