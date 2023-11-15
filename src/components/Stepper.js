@@ -6,8 +6,9 @@ export const StyledStepperCard = styled(Typography)(({ theme }) => ({
   width: 46,
   borderRadius: 9,
   backgroundColor: "#50CD89",
-  display: "grid",
-  placeItems: "center",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   fontSize: 18,
   fontWeight: 600,
   lineHeight: "18px",
@@ -35,8 +36,7 @@ const Stepper = ({
           sx={{
             border: isActive ? 0 : "1px dashed rgba(255, 255, 255, 0.30)",
             background: isActive ? "#50CD89" : "rgba(255, 255, 255, 0.05)",
-          }}
-        >
+          }}>
           {stepIndex}
         </StyledStepperCard>
         {isFinalIndex ? null : (
@@ -47,8 +47,7 @@ const Stepper = ({
               borderLeft: "1px dashed rgba(255, 255, 255, 0.30)",
               margin: "5px 0px",
               marginLeft: 46 / 2,
-            }}
-          ></Box>
+            }}></Box>
         )}
       </Box>
       <Box
@@ -57,8 +56,7 @@ const Stepper = ({
           justifyContent: "flex-start",
           flexDirection: "column",
           gap: "10px",
-        }}
-      >
+        }}>
         <Typography
           sx={{
             color: "#F9F9F9",
@@ -69,8 +67,7 @@ const Stepper = ({
             textShadow: isCompletedStep
               ? "0px 4px 4px rgba(0, 0, 0, 0.25)"
               : "none",
-          }}
-        >
+          }}>
           {title}
         </Typography>
         <Typography
@@ -84,8 +81,7 @@ const Stepper = ({
                 ? "0px 4px 4px rgba(0, 0, 0, 0.25)"
                 : "none",
             opacity: 0.5,
-          }}
-        >
+          }}>
           {subTitle}
         </Typography>
       </Box>

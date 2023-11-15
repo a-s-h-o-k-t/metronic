@@ -21,11 +21,9 @@ const StyledLeftContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledRightContainer = styled(Box)(({ theme }) => ({
-  overflowY: "scroll",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
 }));
 
 const StepperItems = [
@@ -80,7 +78,7 @@ const Layout = () => {
             flex={1}
             style={{
               padding: "140px 125px 35px 125px",
-              overflowY: "scroll",
+              overflowY: "auto",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -127,9 +125,19 @@ const Layout = () => {
           </Box>
         </StyledLeftContainer>
         <StyledRightContainer flex={1}>
-          <Suspense fallback={() => <Loader />}>
-            <Outlet />
-          </Suspense>
+          <Box
+            flex={1}
+            style={{
+              overflowY: "auto",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+            <Suspense fallback={() => <Loader />}>
+              <Outlet />
+            </Suspense>
+          </Box>
         </StyledRightContainer>
       </Box>
     </StyledContainer>

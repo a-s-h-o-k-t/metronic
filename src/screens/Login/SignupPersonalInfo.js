@@ -10,12 +10,7 @@ const SignupPersonalInfo = () => {
   const navigate = useNavigate();
 
   return (
-    <Grid
-      container
-      xs={6}
-      justifyContent="center"
-      spacing={2}
-      sx={{ padding: "40px 0px" }}>
+    <Grid container xs={6} spacing={2} sx={{ paddingTop: "200px" }}>
       <Grid item xs={12}>
         <Typography sx={{ color: "#181C32", fontSize: 24 }} align="center">
           Account Details
