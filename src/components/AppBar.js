@@ -6,7 +6,7 @@ import ManAvatar from "../assets/svgIcons/ManAvatar.svg";
 import Icon from "@mdi/react";
 import { mdiBellOutline, mdiMagnify, mdiChevronDown } from "@mdi/js";
 
-const StyledAvatar = styled(Avatar)(({}) => ({
+const StyledAvatar = styled(Avatar)(() => ({
   cursor: "pointer",
   fontSize: 12,
   fontWeight: 700,
