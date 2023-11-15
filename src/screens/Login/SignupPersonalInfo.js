@@ -20,7 +20,8 @@ const SignupPersonalInfo = () => {
   return (
     <Grid
       container
-      md={6}
+      lg={6}
+      md={8}
       xxxs={12}
       spacing={2}
       sx={{
