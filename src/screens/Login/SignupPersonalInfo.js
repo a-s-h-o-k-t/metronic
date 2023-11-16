@@ -140,6 +140,10 @@ const SignupPersonalInfo = () => {
               backgroundColor: "#3E97FF",
               textTransform: "none",
               borderRadius: "6px",
+              padding: "12px 16px",
+              fontSize: 13,
+              lineHeight: "14px",
+              fontWeight: 600,
             }}
             variant="contained"
             onClick={() => navigate("/dashboard")}>
