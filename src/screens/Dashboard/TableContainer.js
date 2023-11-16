@@ -190,7 +190,6 @@ const TableContainer = () => {
         <MuiTextInput
           placeholder={"Search"}
           sx={{
-            width: "180px",
             [theme.breakpoints.down("md")]: {
               width: "100%",
             },
@@ -210,6 +209,7 @@ const TableContainer = () => {
               padding: "13px 12px",
               height: 38,
               backgroundColor: "#F9F9F9",
+              width: "180px",
             },
             "& .MuiInputBase-root.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
               {
@@ -293,7 +293,7 @@ const TableContainer = () => {
             }}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment position="start" sx={{ cursor: "pointer" }}>
                   <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
                 </InputAdornment>
               ),
@@ -340,7 +340,7 @@ const TableContainer = () => {
             }}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment position="start" sx={{ cursor: "pointer" }}>
                   <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
                 </InputAdornment>
               ),
