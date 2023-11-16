@@ -56,37 +56,39 @@ const SignupPersonalInfo = () => {
           Add your personal info
         </Typography>
       </Grid>
-      <Grid item xxxs={12} md={6}>
-        <Button
-          sx={{
-            textTransform: "none",
-            borderColor: "#E1E3EA",
-            borderWidth: 1,
-            color: "#7E8299",
-            fontWeight: 600,
-            fontSize: 12,
-          }}
-          variant="outlined"
-          fullWidth
-          startIcon={<img src={google} alt="icon" width={20} height={20} />}>
-          Sign in with Google
-        </Button>
-      </Grid>
-      <Grid item xxxs={12} md={6}>
-        <Button
-          sx={{
-            textTransform: "none",
-            borderColor: "#E1E3EA",
-            borderWidth: 1,
-            color: "#7E8299",
-            fontWeight: 600,
-            fontSize: 12,
-          }}
-          fullWidth
-          variant="outlined"
-          startIcon={<Icon path={mdiApple} size={0.8} color={"#000000"} />}>
-          Sign in with Apple
-        </Button>
+      <Grid container item xxx={12} columnSpacing={1.5}>
+        <Grid item xxxs={12} md={6}>
+          <Button
+            sx={{
+              textTransform: "none",
+              borderColor: "#E1E3EA",
+              borderWidth: 1,
+              color: "#7E8299",
+              fontWeight: 600,
+              fontSize: 12,
+            }}
+            variant="outlined"
+            fullWidth
+            startIcon={<img src={google} alt="icon" width={20} height={20} />}>
+            Sign in with Google
+          </Button>
+        </Grid>
+        <Grid item xxxs={12} md={6}>
+          <Button
+            sx={{
+              textTransform: "none",
+              borderColor: "#E1E3EA",
+              borderWidth: 1,
+              color: "#7E8299",
+              fontWeight: 600,
+              fontSize: 12,
+            }}
+            fullWidth
+            variant="outlined"
+            startIcon={<Icon path={mdiApple} size={0.8} color={"#000000"} />}>
+            Sign in with Apple
+          </Button>
+        </Grid>
       </Grid>
       <Grid item xxxs={12}>
         <Divider
