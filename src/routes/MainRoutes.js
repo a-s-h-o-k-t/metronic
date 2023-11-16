@@ -10,6 +10,7 @@ const SignupPersonalInfo = lazy(() =>
 const SignupMultiSetup = lazy(() =>
   import("../screens/Login/SignupMultisetup")
 );
+const SubmitViolation = lazy(() => import("../screens/SubmitViolation"));
 
 const MainRoutes = [
   {
@@ -41,6 +42,10 @@ const MainRoutes = [
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "submit-violations",
+        element: <SubmitViolation />,
       },
     ],
   },

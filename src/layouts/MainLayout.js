@@ -29,7 +29,7 @@ const MainLayout = () => {
       title: "Home",
     },
     {
-      path: "unscheduled",
+      path: "submit-violations",
       label: "Submit Violations",
       icon: add_files,
       title: "Submit Violations",
