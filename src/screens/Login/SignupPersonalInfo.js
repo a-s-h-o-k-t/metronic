@@ -151,7 +151,7 @@ const SignupPersonalInfo = () => {
         <Grid item xxxs={12}>
           <MuiTextInput
             placeholder="Confirm Password"
-            type={showPassword ? "text" : "password"}
+            type={showPasswordC ? "text" : "password"}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
