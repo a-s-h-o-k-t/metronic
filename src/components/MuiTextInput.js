@@ -39,11 +39,20 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 }));
 
 const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
-  fontSize: 12,
-  color: theme.colors.blueGray.primary,
+  fontSize: 14,
+  minWidth: 180,
+  fontWeight: 600,
+  color: "#5E6278",
   display: "flex",
   gap: "8px",
+  lineHeight: "14px",
+  marginTop: "5px",
+  padding: "10px 15px",
   alignItems: "center",
+  "&.Mui-selected": {
+    color: "#3E97FF",
+    backgroundColor: "#EEF6FF",
+  },
 }));
 
 const MuiTextInput = ({
@@ -77,10 +86,8 @@ const MuiTextInput = ({
         },
         ...sx,
       }}
-      {...rest}>
-      <StyledMenuItem value="">
-        <em>none</em>
-      </StyledMenuItem>
+      {...rest}
+    >
       {isSelect &&
         selectItems.length &&
         selectItems.map((item, index) => {

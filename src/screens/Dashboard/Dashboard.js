@@ -1,18 +1,24 @@
 import { memo } from "react";
-import { CardComp } from "../../components";
+import { CardComp, MuiTextInput } from "../../components";
 import it_network from "../../assets/svgIcons/it_network.svg";
 import magnifier from "../../assets/svgIcons/magnifier.svg";
 import trush from "../../assets/svgIcons/trush.svg";
 import information_3 from "../../assets/svgIcons/information_3.svg";
-import { Grid, Typography, useTheme } from "@mui/material";
+import { Grid, InputAdornment, Typography, useTheme } from "@mui/material";
 import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
 import TableContainer from "./TableContainer";
 
-// import { useTheme } from "@mui/material/styles";
-
 const Dashboard = () => {
   const theme = useTheme();
+  const dateLists = [
+    { value: 1, label: "Today" },
+    { value: 2, label: "Yesterday" },
+    { value: 3, label: "This Week" },
+    { value: 4, label: "This Month" },
+    { value: 5, label: "Select Date" },
+  ];
+
   const cardItems = [
     {
       title: "252",
@@ -49,36 +55,66 @@ const Dashboard = () => {
       <Grid
         sx={{
           display: "flex",
-          flexDirection: "row-reverse",
-          gap: "8px",
+          justifyContent: "flex-end",
           alignItems: "center",
-        }}>
-        <Grid
-          sx={{
-            width: 140,
-            display: "flex",
-            height: 38,
-            alignItems: "center",
-            justifyContent: "space-between",
-            backgroundColor: "#FFF",
-            borderRadius: "6px",
-            padding: "13px 12px",
-          }}>
-          <Typography
-            sx={{ color: "#3F4254", fontSize: "12px", fontWeight: 600 }}>
-            Today
-          </Typography>
-          <Icon
-            path={mdiChevronDown}
-            height={20}
-            width={20}
-            color={"#7E8299"}
-          />
-        </Grid>
+          gap: "8px",
+          [theme.breakpoints.down("md")]: {
+            flexDirection: "column",
+          },
+        }}
+      >
         <Typography
-          sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}>
+          sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}
+        >
           Sort by
         </Typography>
+        <MuiTextInput
+          isSelect
+          selectItems={dateLists}
+          placeholder="Today"
+          sx={{
+            width: 140,
+            [theme.breakpoints.down("md")]: {
+              width: "100%",
+            },
+            input: {
+              "&::placeholder": {
+                opacity: 1,
+                fontSize: 12,
+                color: "#3F4254",
+                fontWeight: 600,
+              },
+            },
+            "& .MuiInputBase-root": {
+              ".MuiSvgIcon-root": {
+                display: "none",
+              },
+              fontSize: 12,
+              fontWeight: 600,
+              borderRadius: "6px",
+              color: "#3F4254",
+              padding: "13px 12px",
+              height: 38,
+              backgroundColor: theme.colors.white.primary,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                border: "none",
+              },
+            },
+            "& .MuiInputBase-root.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
+              {
+                border: "none",
+              },
+          }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="start">
+                <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
+              </InputAdornment>
+            ),
+          }}
+        ></MuiTextInput>
       </Grid>
 
       <Grid
@@ -88,7 +124,8 @@ const Dashboard = () => {
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
-        }}>
+        }}
+      >
         {cardItems.map((item) => {
           return (
             <CardComp
@@ -109,7 +146,8 @@ const Dashboard = () => {
           [theme.breakpoints.down("md")]: {
             padding: "10px",
           },
-        }}>
+        }}
+      >
         <TableContainer />
       </Grid>
     </Grid>

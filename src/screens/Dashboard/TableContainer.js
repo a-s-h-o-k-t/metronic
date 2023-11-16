@@ -1,5 +1,12 @@
 import { memo } from "react";
-import { Box, Checkbox, Grid, InputAdornment, Typography } from "@mui/material";
+import {
+  Box,
+  Checkbox,
+  Grid,
+  InputAdornment,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { MuiButton, MuiTextInput, TableComp } from "../../components";
 import ProfileIcon from "../../assets/svgIcons/ProfileIcon.svg";
 import arrows from "../../assets/svgIcons/arrows.svg";
@@ -7,6 +14,19 @@ import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
 
 const TableContainer = () => {
+  const theme = useTheme();
+  const dateLists = [
+    { value: 1, label: "Today" },
+    { value: 2, label: "Yesterday" },
+    { value: 3, label: "This Week" },
+    { value: 4, label: "This Month" },
+    { value: 5, label: "Select Date" },
+  ];
+  const statusList = [
+    { value: 1, label: "Removed" },
+    { value: 2, label: "Delisted" },
+  ];
+
   const columns = [
     {
       field: "",
@@ -179,13 +199,39 @@ const TableContainer = () => {
           justifyContent: "space-between",
           alignItems: "center",
           flexDirection: "row",
-          flexWrap: "wrap",
+          [theme.breakpoints.down("md")]: {
+            flexDirection: "column",
+          },
         }}
       >
         <MuiTextInput
           placeholder={"search"}
           sx={{
             width: "180px",
+            [theme.breakpoints.down("md")]: {
+              width: "100%",
+            },
+            input: {
+              "&::placeholder": {
+                opacity: 1,
+                fontSize: 12,
+                color: "#7E8299",
+                fontWeight: 600,
+              },
+            },
+            "& .MuiInputBase-root": {
+              fontSize: 12,
+              fontWeight: 600,
+              borderRadius: "6px",
+              color: "#3F4254",
+              padding: "13px 12px",
+              height: 38,
+              backgroundColor: "#F9F9F9",
+            },
+            "& .MuiInputBase-root.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
+              {
+                border: "none",
+              },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": {
                 border: "none",
@@ -201,12 +247,14 @@ const TableContainer = () => {
           }}
         />
         <Grid
+          container
           sx={{
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
             gap: "20px",
-            flexWrap: "wrap",
+            justifyContent: "flex-end",
+            [theme.breakpoints.down("md")]: {
+              flexDirection: "column",
+            },
           }}
         >
           <MuiButton
@@ -221,40 +269,100 @@ const TableContainer = () => {
               backgroundColor: "#EEF6FF",
             }}
           />
-          <Grid
+          <MuiTextInput
+            isSelect
+            selectItems={dateLists}
+            placeholder="Today"
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "30px",
-              backgroundColor: "#F9F9F9",
-              padding: "9px 12px",
+              width: 140,
+              [theme.breakpoints.down("md")]: {
+                width: "100%",
+              },
+              input: {
+                "&::placeholder": {
+                  opacity: 1,
+                  fontSize: 12,
+                  color: "#3F4254",
+                  fontWeight: 600,
+                },
+              },
+              "& .MuiInputBase-root": {
+                ".MuiSvgIcon-root": {
+                  display: "none",
+                },
+                fontSize: 12,
+                fontWeight: 600,
+                borderRadius: "6px",
+                color: "#3F4254",
+                padding: "13px 12px",
+                height: 38,
+                backgroundColor: "#F9F9F9",
+              },
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  border: "none",
+                },
+              },
+              "& .MuiInputBase-root.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
+                {
+                  border: "none",
+                },
             }}
-          >
-            <Typography
-              sx={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
-            >
-              Today
-            </Typography>
-            <Icon path={mdiChevronDown} color="#A1A5B7" size={1} />
-          </Grid>
-          <Grid
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
+                </InputAdornment>
+              ),
+            }}
+          ></MuiTextInput>
+          <MuiTextInput
+            isSelect
+            selectItems={statusList}
+            placeholder="Status"
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "30px",
-              backgroundColor: "#F9F9F9",
-              padding: "9px 12px",
+              width: 140,
+              [theme.breakpoints.down("md")]: {
+                width: "100%",
+              },
+              input: {
+                "&::placeholder": {
+                  opacity: 1,
+                  fontSize: 12,
+                  color: "#3F4254",
+                  fontWeight: 600,
+                },
+              },
+              "& .MuiInputBase-root": {
+                ".MuiSvgIcon-root": {
+                  display: "none",
+                },
+                fontSize: 12,
+                fontWeight: 600,
+                borderRadius: "6px",
+                color: "#3F4254",
+                padding: "13px 12px",
+                height: 38,
+                backgroundColor: "#F9F9F9",
+              },
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  border: "none",
+                },
+              },
+              "& .MuiInputBase-root.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
+                {
+                  border: "none",
+                },
             }}
-          >
-            <Typography
-              sx={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
-            >
-              Status
-            </Typography>
-            <Icon path={mdiChevronDown} color="#A1A5B7" size={1} />
-          </Grid>
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
+                </InputAdornment>
+              ),
+            }}
+          ></MuiTextInput>
         </Grid>
       </Grid>
       <Grid sx={{ paddingTop: "30px" }}>
