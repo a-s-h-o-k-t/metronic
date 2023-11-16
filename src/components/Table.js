@@ -75,6 +75,7 @@ const TableComp = ({ columns, rows, totalItems, ...rest }) => {
           hideFooterPagination
           showColumnRightBorder
           disableSelectionOnClick
+          disableColumnMenu
           rowHeight={80}
           headerHeight={50}
           page={page - 1}

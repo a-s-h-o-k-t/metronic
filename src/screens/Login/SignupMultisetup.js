@@ -12,8 +12,8 @@ const SignupMultiSetup = () => {
   const cardItems = [
     {
       id: 1,
-      title: "Account",
-      subTitle: "Ready to submit",
+      title: "Creator",
+      subTitle: "Sign-up as a creator",
       iconPath: mdiAccountBox,
     },
     {

@@ -25,9 +25,8 @@ const TableContainer = () => {
       field: "id",
       headerName: "ID",
       sortable: false,
-      maxWidth: 110,
-      minWidth: 110,
-      disableColumnMenu: true,
+      maxWidth: 115,
+      minWidth: 115,
       renderCell: (params) => {
         return (
           <Typography sx={{ color: "#181C32", fontSize: 14, fontWeight: 600 }}>
@@ -39,16 +38,14 @@ const TableContainer = () => {
     {
       field: "dateRemoved",
       sortable: false,
-      disableColumnMenu: true,
       headerName: "DATE REMOVED",
-      maxWidth: 200,
-      minWidth: 200,
+      maxWidth: 230,
+      minWidth: 230,
     },
     {
       field: "link",
       headerName: "LINK",
       sortable: false,
-      disableColumnMenu: true,
       maxWidth: 250,
       minWidth: 250,
       renderCell: (params) => {
@@ -63,16 +60,16 @@ const TableContainer = () => {
       field: "source",
       headerName: "SOURCE",
       sortable: false,
-      disableColumnMenu: true,
-      maxWidth: 200,
-      minWidth: 200,
+      maxWidth: 180,
+      minWidth: 180,
     },
     {
       field: "action",
       headerName: "Action",
       sortable: false,
-      disableColumnMenu: true,
       minWidth: 150,
+      headerAlign: "right",
+      align: "right",
       renderCell: (params) => {
         return params.row.action === true ? (
           <Typography
@@ -189,7 +186,7 @@ const TableContainer = () => {
           },
         }}>
         <MuiTextInput
-          placeholder={"search"}
+          placeholder={"Search"}
           sx={{
             width: "180px",
             [theme.breakpoints.down("md")]: {
