@@ -45,8 +45,7 @@ const TableComp = ({ columns, rows, children, ...rest }) => {
         borderColor: theme.colors.gray.border,
         mt: 1,
         position: "relative",
-      }}
-    >
+      }}>
       <StyledDataGrid
         rows={rows}
         columns={columns}

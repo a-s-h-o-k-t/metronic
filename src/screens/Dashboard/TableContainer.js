@@ -1,12 +1,5 @@
 import { memo } from "react";
-import {
-  Box,
-  Checkbox,
-  Grid,
-  InputAdornment,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Grid, InputAdornment, Typography, useTheme } from "@mui/material";
 import { MuiButton, MuiTextInput, TableComp } from "../../components";
 import ProfileIcon from "../../assets/svgIcons/ProfileIcon.svg";
 import arrows from "../../assets/svgIcons/arrows.svg";
@@ -28,20 +21,6 @@ const TableContainer = () => {
   ];
 
   const columns = [
-    {
-      field: "",
-      renderHeader: () => (
-        <Checkbox sx={{ "& .MuiSvgIcon-root": { fontSize: 30 } }} />
-      ),
-      sortable: false,
-      maxWidth: 70,
-      minWidth: 70,
-      disableColumnMenu: true,
-      align: "center",
-      renderCell: () => {
-        return <Checkbox sx={{ "& .MuiSvgIcon-root": { fontSize: 30 } }} />;
-      },
-    },
     {
       field: "id",
       headerName: "ID",
@@ -267,6 +246,7 @@ const TableContainer = () => {
           />
           <MuiTextInput
             isSelect
+            value={dateLists[0].value}
             selectItems={dateLists}
             placeholder="Today"
             sx={{
@@ -278,7 +258,7 @@ const TableContainer = () => {
                 "&::placeholder": {
                   opacity: 1,
                   fontSize: 12,
-                  color: "#3F4254",
+                  color: "#A1A5B7",
                   fontWeight: 600,
                 },
               },
@@ -289,7 +269,7 @@ const TableContainer = () => {
                 fontSize: 12,
                 fontWeight: 600,
                 borderRadius: "6px",
-                color: "#3F4254",
+                color: "#A1A5B7",
                 padding: "13px 12px",
                 height: 38,
                 backgroundColor: "#F9F9F9",
@@ -314,6 +294,7 @@ const TableContainer = () => {
           <MuiTextInput
             isSelect
             selectItems={statusList}
+            value={statusList[0].value}
             placeholder="Status"
             sx={{
               width: 140,
@@ -324,7 +305,7 @@ const TableContainer = () => {
                 "&::placeholder": {
                   opacity: 1,
                   fontSize: 12,
-                  color: "#3F4254",
+                  color: "#A1A5B7",
                   fontWeight: 600,
                 },
               },
@@ -335,7 +316,7 @@ const TableContainer = () => {
                 fontSize: 12,
                 fontWeight: 600,
                 borderRadius: "6px",
-                color: "#3F4254",
+                color: "#A1A5B7",
                 padding: "13px 12px",
                 height: 38,
                 backgroundColor: "#F9F9F9",
@@ -360,7 +341,7 @@ const TableContainer = () => {
         </Grid>
       </Grid>
       <Grid sx={{ paddingTop: "30px" }}>
-        <TableComp columns={columns} rows={rows} />
+        <TableComp columns={columns} rows={rows} checkboxSelection />
       </Grid>
     </Box>
   );

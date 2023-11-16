@@ -61,15 +61,14 @@ const Dashboard = () => {
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
-        }}
-      >
+        }}>
         <Typography
-          sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}
-        >
+          sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}>
           Sort by
         </Typography>
         <MuiTextInput
           isSelect
+          value={dateLists[0].value}
           selectItems={dateLists}
           placeholder="Today"
           sx={{
@@ -113,8 +112,7 @@ const Dashboard = () => {
                 <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
               </InputAdornment>
             ),
-          }}
-        ></MuiTextInput>
+          }}></MuiTextInput>
       </Grid>
 
       <Grid
@@ -124,8 +122,7 @@ const Dashboard = () => {
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
-        }}
-      >
+        }}>
         {cardItems.map((item) => {
           return (
             <CardComp
@@ -146,8 +143,7 @@ const Dashboard = () => {
           [theme.breakpoints.down("md")]: {
             padding: "10px",
           },
-        }}
-      >
+        }}>
         <TableContainer />
       </Grid>
     </Grid>
