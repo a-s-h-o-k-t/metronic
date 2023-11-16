@@ -70,7 +70,7 @@ const SignupPersonalInfo = () => {
           Add your personal info
         </Typography>
       </Grid>
-      <Grid container item xxx={12} columnSpacing={1.5}>
+      <Grid container item xxx={12} spacing={1.5}>
         <Grid item xxxs={12} md={6}>
           <Button
             sx={{
@@ -116,7 +116,7 @@ const SignupPersonalInfo = () => {
         </Divider>
       </Grid>
       <Grid item container xxx={12} rowSpacing={2.5}>
-        <Grid container item xxx={12} columnSpacing={2.5}>
+        <Grid container item xxx={12} spacing={2.5}>
           <Grid item xxxs={12} md={6}>
             <MuiTextInput placeholder="First Name" />
           </Grid>
