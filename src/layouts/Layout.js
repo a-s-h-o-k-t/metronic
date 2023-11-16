@@ -82,7 +82,7 @@ const Layout = () => {
   const selectedStepperValue = matchPath();
 
   return (
-    <StyledContainer maxWidth="xl">
+    <StyledContainer maxWidth="xxl">
       <Box
         sx={{
           height: "100vh",

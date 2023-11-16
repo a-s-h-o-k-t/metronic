@@ -73,7 +73,7 @@ const MainLayout = () => {
   ];
 
   return (
-    <StyledContainer maxWidth="xl">
+    <StyledContainer maxWidth="xxl">
       <AppBarComp />
       <Box className="container">
         <Box
