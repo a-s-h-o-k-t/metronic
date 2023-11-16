@@ -47,8 +47,8 @@ const TableContainer = () => {
       field: "link",
       headerName: "LINK",
       sortable: false,
-      maxWidth: 280,
-      minWidth: 280,
+      maxWidth: 250,
+      minWidth: 250,
       renderCell: (params) => {
         return (
           <Typography sx={{ color: "#3E97FF", fontSize: 14 }}>
@@ -68,7 +68,7 @@ const TableContainer = () => {
       field: "action",
       headerName: "Action",
       sortable: false,
-      minWidth: 170,
+      minWidth: 150,
       renderCell: (params) => {
         return params.row.action === true ? (
           <Typography
