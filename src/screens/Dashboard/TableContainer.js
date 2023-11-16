@@ -16,6 +16,7 @@ const TableContainer = () => {
     { value: 5, label: "Select Date" },
   ];
   const statusList = [
+    { value: 0, label: "Status" },
     { value: 1, label: "Removed" },
     { value: 2, label: "Delisted" },
   ];

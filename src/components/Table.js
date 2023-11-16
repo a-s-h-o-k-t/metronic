@@ -96,7 +96,14 @@ const TableComp = ({ columns, rows, totalItems, ...rest }) => {
           },
         }}>
         <Typography
-          style={{ fontSize: "10px", fontWeight: 600, color: "#A1A5B7" }}>
+          style={{
+            fontSize: "10px",
+            padding: "10px",
+            backgroundColor: "#F9F9F9",
+            fontWeight: 600,
+            color: "#A1A5B7",
+            borderRadius: "6px",
+          }}>
           Total Result: {totalItems}
         </Typography>
         <Grid

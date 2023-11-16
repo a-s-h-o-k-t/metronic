@@ -38,14 +38,14 @@ const Dashboard = () => {
       title: "252",
       icon: information_3,
       subTitle: "Link Violations",
-      background: "#F8F5FF",
+      background: "#fef8e5",
       border: "#F6C000",
     },
     {
       title: "252",
       icon: trush,
       subTitle: "Links Removed",
-      background: "#F8F5FF",
+      background: "#fdecf0",
       border: "#F1416C",
     },
   ];

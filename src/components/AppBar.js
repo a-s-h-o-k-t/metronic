@@ -13,8 +13,9 @@ import PropTypes from "prop-types";
 import MetronicLogo from "../assets/svgIcons/MetronicLogo.svg";
 import ManAvatar from "../assets/svgIcons/ManAvatar.svg";
 import notification from "../assets/svgIcons/notification.svg";
+import search from "../assets/svgIcons/search.svg";
 import Icon from "@mdi/react";
-import { mdiMagnify, mdiChevronDown, mdiMenu } from "@mdi/js";
+import { mdiChevronDown, mdiMenu } from "@mdi/js";
 import { SidebarContext } from "../contexts/SidebarContext";
 
 const StyledAvatar = styled(Avatar)(() => ({
@@ -96,7 +97,12 @@ const AppBarComp = () => {
             </Badge>
           </StyledGrid>
           <StyledGrid>
-            <IconStyle path={mdiMagnify} size={1} color={"#A1A5B7"} />
+            <img
+              src={search}
+              alt="search"
+              height={22}
+              width={22}
+              style={{ cursor: "pointer", color: '"#A1A5B7"' }}></img>
           </StyledGrid>
           <StyledAvatar>
             <img src={ManAvatar} alt="metronicAvatar" height={40} width={40} />
