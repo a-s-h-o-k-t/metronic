@@ -40,15 +40,15 @@ const TableContainer = () => {
       field: "dateRemoved",
       sortable: false,
       headerName: "DATE REMOVED",
-      maxWidth: 160,
-      minWidth: 160,
+      maxWidth: 200,
+      minWidth: 200,
     },
     {
       field: "link",
       headerName: "LINK",
       sortable: false,
-      maxWidth: 260,
-      minWidth: 260,
+      maxWidth: 280,
+      minWidth: 280,
       renderCell: (params) => {
         return (
           <Typography sx={{ color: "#3E97FF", fontSize: 14 }}>
@@ -61,14 +61,14 @@ const TableContainer = () => {
       field: "source",
       headerName: "SOURCE",
       sortable: false,
-      maxWidth: 240,
-      minWidth: 240,
+      maxWidth: 200,
+      minWidth: 200,
     },
     {
       field: "action",
       headerName: "Action",
       sortable: false,
-      width: 100,
+      minWidth: 170,
       renderCell: (params) => {
         return params.row.action === true ? (
           <Typography

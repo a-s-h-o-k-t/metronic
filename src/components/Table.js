@@ -1,13 +1,8 @@
 import React, { memo, useEffect, useState } from "react";
 import { Grid, Pagination, Typography, styled, useTheme } from "@mui/material";
-import { DataGridPro, LicenseInfo } from "@mui/x-data-grid-pro";
+import { DataGrid } from "@mui/x-data-grid";
 
-const MUI_DATAGRID_KEY =
-  "2a1203426ca4412164fd0b503afd0b83T1JERVI6MzkyOTgsRVhQSVJZPTE2NzgzODczMjgwMDAsS0VZVkVSU0lPTj0x";
-
-LicenseInfo.setLicenseKey(MUI_DATAGRID_KEY);
-
-const StyledDataGrid = styled(DataGridPro)(() => ({
+const StyledDataGrid = styled(DataGrid)(() => ({
   // minHeight: "400px",
   color: "#7E8299",
   fontSize: 14,
@@ -77,7 +72,7 @@ const TableComp = ({ columns, rows, totalItems, ...rest }) => {
           rowHeight={80}
           headerHeight={50}
           page={page - 1}
-          pageSize={2}
+          pageSize={tableRowCount}
           {...rest}
         />
       </Grid>
