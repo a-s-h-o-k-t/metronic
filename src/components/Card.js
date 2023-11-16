@@ -14,7 +14,6 @@ const StyledTitle = styled(Typography)(() => ({
   fontWeight: 600,
   lineHeight: "34px",
   color: "#181C32",
-  textOverflow: "ellipsis",
 }));
 
 const StyledSubTitle = styled(Typography)(({ theme }) => ({
@@ -22,10 +21,6 @@ const StyledSubTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 500,
   lineHeight: "16px",
   color: "#5E6278",
-  width: "150px",
-  whiteSpace: "nowrap",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
 }));
 
 const CardComp = ({ title, icon, subTitle, background, border }) => {
@@ -39,16 +34,14 @@ const CardComp = ({ title, icon, subTitle, background, border }) => {
         borderBottomColor: border,
         borderRadius: "12px",
         flex: 1,
-      }}
-    >
+      }}>
       <StyledCard>
         <Grid
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-          }}
-        >
+          }}>
           <StyledTitle>{title}</StyledTitle>
           <Grid
             style={{
@@ -57,8 +50,7 @@ const CardComp = ({ title, icon, subTitle, background, border }) => {
               lineHeight: "0px",
               backgroundColor: background,
               borderRadius: "4px",
-            }}
-          >
+            }}>
             <img src={icon} alt="cardIcon" height={20} width={20} />
           </Grid>
         </Grid>

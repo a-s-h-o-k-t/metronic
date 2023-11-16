@@ -58,9 +58,6 @@ const Dashboard = () => {
           justifyContent: "flex-end",
           alignItems: "center",
           gap: "8px",
-          [theme.breakpoints.down("md")]: {
-            flexDirection: "column",
-          },
         }}>
         <Typography
           sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}>
@@ -73,9 +70,7 @@ const Dashboard = () => {
           placeholder="Today"
           sx={{
             width: 140,
-            [theme.breakpoints.down("md")]: {
-              width: "100%",
-            },
+
             input: {
               "&::placeholder": {
                 opacity: 1,
