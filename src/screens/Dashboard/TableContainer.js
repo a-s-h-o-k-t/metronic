@@ -80,6 +80,7 @@ const TableContainer = () => {
               padding: "7px",
               color: "#50CD89",
               borderRadius: "4px",
+              lineHeight: " 12px",
               backgroundColor: "#E8FFF3",
             }}>
             Removed
@@ -92,6 +93,7 @@ const TableContainer = () => {
               padding: "7px",
               color: "#D9214E",
               borderRadius: "4px",
+              lineHeight: " 12px",
               backgroundColor: "#FFF5F8",
             }}>
             Delisted
