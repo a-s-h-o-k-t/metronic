@@ -27,6 +27,12 @@ const StyledDataGrid = styled(DataGrid)(() => ({
   "& .MuiDataGrid-pinnedColumns": {
     boxShadow: "none",
   },
+  "&.MuiDataGrid-root .MuiDataGrid-cell:focus-within": {
+    outline: "none",
+  },
+  "&.MuiDataGrid-root .MuiDataGrid-columnHeader:focus-within": {
+    outline: "none",
+  },
 }));
 
 const TableComp = ({ columns, rows, totalItems, ...rest }) => {

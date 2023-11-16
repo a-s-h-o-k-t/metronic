@@ -39,6 +39,7 @@ const TableContainer = () => {
     {
       field: "dateRemoved",
       sortable: false,
+      disableColumnMenu: true,
       headerName: "DATE REMOVED",
       maxWidth: 200,
       minWidth: 200,
@@ -47,6 +48,7 @@ const TableContainer = () => {
       field: "link",
       headerName: "LINK",
       sortable: false,
+      disableColumnMenu: true,
       maxWidth: 250,
       minWidth: 250,
       renderCell: (params) => {
@@ -61,6 +63,7 @@ const TableContainer = () => {
       field: "source",
       headerName: "SOURCE",
       sortable: false,
+      disableColumnMenu: true,
       maxWidth: 200,
       minWidth: 200,
     },
@@ -68,6 +71,7 @@ const TableContainer = () => {
       field: "action",
       headerName: "Action",
       sortable: false,
+      disableColumnMenu: true,
       minWidth: 150,
       renderCell: (params) => {
         return params.row.action === true ? (
