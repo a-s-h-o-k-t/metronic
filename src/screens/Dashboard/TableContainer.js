@@ -96,8 +96,7 @@ const TableContainer = () => {
               color: "#50CD89",
               borderRadius: "4px",
               backgroundColor: "#E8FFF3",
-            }}
-          >
+            }}>
             Removed
           </Typography>
         ) : (
@@ -109,8 +108,7 @@ const TableContainer = () => {
               color: "#D9214E",
               borderRadius: "4px",
               backgroundColor: "#FFF5F8",
-            }}
-          >
+            }}>
             Delisted
           </Typography>
         );
@@ -202,8 +200,7 @@ const TableContainer = () => {
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
-        }}
-      >
+        }}>
         <MuiTextInput
           placeholder={"search"}
           sx={{
@@ -255,8 +252,7 @@ const TableContainer = () => {
             [theme.breakpoints.down("md")]: {
               flexDirection: "column",
             },
-          }}
-        >
+          }}>
           <MuiButton
             title={"Export"}
             startIcon={<img src={arrows} alt="img" />}
@@ -314,8 +310,7 @@ const TableContainer = () => {
                   <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
                 </InputAdornment>
               ),
-            }}
-          ></MuiTextInput>
+            }}></MuiTextInput>
           <MuiTextInput
             isSelect
             selectItems={statusList}
@@ -361,8 +356,7 @@ const TableContainer = () => {
                   <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
                 </InputAdornment>
               ),
-            }}
-          ></MuiTextInput>
+            }}></MuiTextInput>
         </Grid>
       </Grid>
       <Grid sx={{ paddingTop: "30px" }}>

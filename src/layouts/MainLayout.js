@@ -1,6 +1,6 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { Outlet } from "react-router";
-import { Box, Container, styled, useTheme } from "@mui/material";
+import { Box, Container, Drawer, styled, useTheme } from "@mui/material";
 import { AppBarComp, Loader, SideNav } from "../components";
 import home from "../assets/svgIcons/home.svg";
 import add_files from "../assets/svgIcons/add_files.svg";
@@ -10,6 +10,8 @@ import graph_up from "../assets/svgIcons/graph_up.svg";
 import setting from "../assets/svgIcons/setting.svg";
 import message_question from "../assets/svgIcons/message_question.svg";
 import rescue from "../assets/svgIcons/rescue.svg";
+import { SidebarContext } from "../contexts/SidebarContext";
+import MetronicLogo from "../assets/svgIcons/MetronicLogo.svg";
 
 export const StyledContainer = styled(Container)(() => ({
   padding: "0px !important",
@@ -17,6 +19,8 @@ export const StyledContainer = styled(Container)(() => ({
 
 const MainLayout = () => {
   const theme = useTheme();
+  const { sidebarToggle, closeSidebar } = React.useContext(SidebarContext);
+
   const tabItems = [
     {
       path: "dashboard",
@@ -67,8 +71,9 @@ const MainLayout = () => {
       title: "Support",
     },
   ];
+
   return (
-    <StyledContainer maxWidth="xl" style={{ background: "grey" }}>
+    <StyledContainer maxWidth="xl">
       <AppBarComp />
       <Box className="container">
         <Box
@@ -92,6 +97,19 @@ const MainLayout = () => {
           </Suspense>
         </Box>
       </Box>
+      <Drawer
+        anchor={theme.direction === "rtl" ? "right" : "left"}
+        open={sidebarToggle}
+        onClose={closeSidebar}
+        variant="temporary"
+        elevation={9}>
+        <Box flex={1} sx={{ padding: "20px 0px", alignSelf: "center" }}>
+          <img src={MetronicLogo} alt="metronicLogo" height={24} width={127} />
+        </Box>
+        <Box className="sideNav">
+          <SideNav tabItems={tabItems} />
+        </Box>
+      </Drawer>
     </StyledContainer>
   );
 };
