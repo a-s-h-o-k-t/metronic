@@ -103,7 +103,7 @@ const Dashboard = () => {
           }}
           InputProps={{
             endAdornment: (
-              <InputAdornment position="start">
+              <InputAdornment position="start" sx={{ cursor: "pointer" }}>
                 <Icon path={mdiChevronDown} size={1} color={"#7E8299"} />
               </InputAdornment>
             ),
