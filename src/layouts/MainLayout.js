@@ -77,11 +77,16 @@ const MainLayout = () => {
             [theme.breakpoints.down("md")]: {
               display: "none",
             },
-          }}
-        >
+          }}>
           <SideNav tabItems={tabItems} />
         </Box>
-        <Box className="mainContent">
+        <Box
+          className="mainContent"
+          sx={{
+            [theme.breakpoints.down("md")]: {
+              padding: "10px",
+            },
+          }}>
           <Suspense fallback={() => <Loader />}>
             <Outlet />
           </Suspense>

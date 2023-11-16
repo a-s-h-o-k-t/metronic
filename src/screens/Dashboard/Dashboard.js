@@ -52,8 +52,7 @@ const Dashboard = () => {
           flexDirection: "row-reverse",
           gap: "8px",
           alignItems: "center",
-        }}
-      >
+        }}>
         <Grid
           sx={{
             width: 140,
@@ -64,11 +63,9 @@ const Dashboard = () => {
             backgroundColor: "#FFF",
             borderRadius: "6px",
             padding: "13px 12px",
-          }}
-        >
+          }}>
           <Typography
-            sx={{ color: "#3F4254", fontSize: "12px", fontWeight: 600 }}
-          >
+            sx={{ color: "#3F4254", fontSize: "12px", fontWeight: 600 }}>
             Today
           </Typography>
           <Icon
@@ -79,8 +76,7 @@ const Dashboard = () => {
           />
         </Grid>
         <Typography
-          sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}
-        >
+          sx={{ color: "#7E8299", fontSize: "14px", fontWeight: 500 }}>
           Sort by
         </Typography>
       </Grid>
@@ -92,8 +88,7 @@ const Dashboard = () => {
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
-        }}
-      >
+        }}>
         {cardItems.map((item) => {
           return (
             <CardComp
@@ -111,8 +106,10 @@ const Dashboard = () => {
           backgroundColor: "#FFF",
           borderRadius: "12px",
           padding: "30px",
-        }}
-      >
+          [theme.breakpoints.down("md")]: {
+            padding: "10px",
+          },
+        }}>
         <TableContainer />
       </Grid>
     </Grid>

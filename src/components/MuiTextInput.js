@@ -15,7 +15,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     alignItems: "center",
   },
   "& .MuiFormLabel-root": {
-    color: '#7E8299',
+    color: "#7E8299",
     fontSize: 12,
     transformOrigin: "bottom left",
     ".MuiFormLabel-asterisk": { color: theme.colors.red.primary },
@@ -59,7 +59,6 @@ const MuiTextInput = ({
   variant = "outlined",
   inputHeight,
   sx,
-  endAdornment,
   ...rest
 }) => {
   return (
@@ -72,15 +71,13 @@ const MuiTextInput = ({
       value={value}
       InputProps={inputProps}
       onChange={onChange}
-      endAdornment={endAdornment}
       sx={{
         "& .MuiInputBase-root": {
           height: inputHeight || 36,
         },
         ...sx,
       }}
-      {...rest}
-    >
+      {...rest}>
       <StyledMenuItem value="">
         <em>none</em>
       </StyledMenuItem>

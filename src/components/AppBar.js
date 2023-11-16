@@ -1,10 +1,19 @@
 import * as React from "react";
-import { styled, AppBar, Toolbar, Avatar, Grid } from "@mui/material";
+import {
+  styled,
+  AppBar,
+  Toolbar,
+  Avatar,
+  Grid,
+  IconButton,
+  useTheme,
+} from "@mui/material";
 import PropTypes from "prop-types";
 import MetronicLogo from "../assets/svgIcons/MetronicLogo.svg";
 import ManAvatar from "../assets/svgIcons/ManAvatar.svg";
 import Icon from "@mdi/react";
-import { mdiBellOutline, mdiMagnify, mdiChevronDown } from "@mdi/js";
+import { mdiBellOutline, mdiMagnify, mdiChevronDown, mdiMenu } from "@mdi/js";
+import { SidebarContext } from "../contexts/SidebarContext";
 
 const StyledAvatar = styled(Avatar)(() => ({
   cursor: "pointer",
@@ -17,6 +26,9 @@ const IconStyle = styled(Icon)(() => ({
 }));
 
 const AppBarComp = () => {
+  const { toggleSidebar } = React.useContext(SidebarContext);
+  const theme = useTheme();
+
   return (
     <AppBar
       position="static"
@@ -37,7 +49,25 @@ const AppBarComp = () => {
           alignItems: "center",
           justifyContent: "space-between",
         }}>
-        <img src={MetronicLogo} alt="metronicLogo" height={24} width={127} />
+        <IconButton
+          color="primary"
+          onClick={toggleSidebar}
+          sx={{
+            display: "none",
+            [theme.breakpoints.down("md")]: {
+              display: "initial",
+            },
+          }}>
+          <IconStyle path={mdiMenu} size={1} color={"#5E6278"} />
+        </IconButton>
+        <Grid
+          sx={{
+            [theme.breakpoints.down("md")]: {
+              display: "none",
+            },
+          }}>
+          <img src={MetronicLogo} alt="metronicLogo" height={24} width={127} />
+        </Grid>
         <Grid style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <IconStyle path={mdiBellOutline} size={1} color={"#5E6278"} />
           <IconStyle path={mdiMagnify} size={1} color={"#A1A5B7"} />
