@@ -183,6 +183,7 @@ const TableContainer = () => {
           flexDirection: "row",
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
+            gap: "20px",
           },
         }}>
         <MuiTextInput

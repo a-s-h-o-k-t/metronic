@@ -7,12 +7,14 @@ import {
   Grid,
   IconButton,
   useTheme,
+  Badge,
 } from "@mui/material";
 import PropTypes from "prop-types";
 import MetronicLogo from "../assets/svgIcons/MetronicLogo.svg";
 import ManAvatar from "../assets/svgIcons/ManAvatar.svg";
+import notification from "../assets/svgIcons/notification.svg";
 import Icon from "@mdi/react";
-import { mdiBellOutline, mdiMagnify, mdiChevronDown, mdiMenu } from "@mdi/js";
+import { mdiMagnify, mdiChevronDown, mdiMenu } from "@mdi/js";
 import { SidebarContext } from "../contexts/SidebarContext";
 
 const StyledAvatar = styled(Avatar)(() => ({
@@ -20,7 +22,10 @@ const StyledAvatar = styled(Avatar)(() => ({
   fontSize: 12,
   fontWeight: 700,
 }));
-
+const StyledGrid = styled(Grid)(() => ({
+  padding: "5px",
+  display: "flex",
+}));
 const IconStyle = styled(Icon)(() => ({
   cursor: "pointer",
 }));
@@ -69,8 +74,30 @@ const AppBarComp = () => {
           <img src={MetronicLogo} alt="metronicLogo" height={24} width={127} />
         </Grid>
         <Grid style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <IconStyle path={mdiBellOutline} size={1} color={"#5E6278"} />
-          <IconStyle path={mdiMagnify} size={1} color={"#A1A5B7"} />
+          <StyledGrid>
+            <Badge
+              badgeContent={4}
+              sx={{
+                "& .MuiBadge-badge": {
+                  backgroundColor: "#F1416C",
+                  minWidth: 18,
+                  height: 18,
+                  padding: "0 5px",
+                  fontSize: 10,
+                },
+                color: "#FFFFFF",
+              }}>
+              <img
+                src={notification}
+                alt="notification"
+                height={22}
+                width={22}
+              />
+            </Badge>
+          </StyledGrid>
+          <StyledGrid>
+            <IconStyle path={mdiMagnify} size={1} color={"#A1A5B7"} />
+          </StyledGrid>
           <StyledAvatar>
             <img src={ManAvatar} alt="metronicAvatar" height={40} width={40} />
           </StyledAvatar>
