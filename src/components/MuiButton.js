@@ -9,6 +9,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   textTransform: "none",
   fontSize: 14,
   lineHeight: 0,
+  borderRadius: "6px",
 }));
 
 const MuiButton = ({ title, endIcon, startIcon, sx, onClick }) => {
@@ -17,8 +18,7 @@ const MuiButton = ({ title, endIcon, startIcon, sx, onClick }) => {
       endIcon={endIcon}
       startIcon={startIcon}
       sx={{ ...sx }}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {title}
     </StyledButton>
   );

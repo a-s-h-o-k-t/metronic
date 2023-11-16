@@ -1,8 +1,10 @@
 import { memo, useState } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { AccountCard, MuiButton } from "../../components";
-import { mdiAccountBox, mdiBriefcaseVariant } from "@mdi/js";
 import { useNavigate } from "react-router";
+import briefcase from "../../assets/svgIcons/briefcase.svg";
+import user_square from "../../assets/svgIcons/user_square.svg";
+import arrow_right from "../../assets/svgIcons/arrow_right.svg";
 
 const SignupMultiSetup = () => {
   const navigate = useNavigate();
@@ -14,13 +16,13 @@ const SignupMultiSetup = () => {
       id: 1,
       title: "Creator",
       subTitle: "Sign-up as a creator",
-      iconPath: mdiAccountBox,
+      iconPath: user_square,
     },
     {
       id: 2,
       title: "Agency",
       subTitle: "Sign-up as an agency",
-      iconPath: mdiBriefcaseVariant,
+      iconPath: briefcase,
     },
   ];
 
@@ -91,6 +93,7 @@ const SignupMultiSetup = () => {
       <Box sx={{ justifyContent: "end", display: "flex" }}>
         <MuiButton
           title="Continue"
+          endIcon={<img alt="arrow" src={arrow_right} />}
           sx={{
             backgroundColor: "#006CEA",
             padding: "12px 18px",

@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { Box, Typography } from "@mui/material";
-import Icon from "@mdi/react";
 
 const AccountCard = ({ title, subTitle, iconPath, isSelected, onClick }) => {
   return (
@@ -16,13 +15,8 @@ const AccountCard = ({ title, subTitle, iconPath, isSelected, onClick }) => {
         cursor: "pointer",
         borderColor: isSelected ? "#2884EF" : "#D8D8E5",
         backgroundColor: isSelected ? "#EEF6FF" : "#FFF",
-      }}
-    >
-      <Icon
-        size={1.2}
-        path={iconPath}
-        color={isSelected ? "#006CEA" : "#A1A5B7"}
-      />
+      }}>
+      <img alt="img" src={iconPath} height={32} width={32} />
       <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         <Typography
           sx={{
@@ -30,8 +24,7 @@ const AccountCard = ({ title, subTitle, iconPath, isSelected, onClick }) => {
             fontSize: 15,
             fontWeight: 600,
             lineHeight: "16px",
-          }}
-        >
+          }}>
           {title}
         </Typography>
         <Typography
@@ -40,8 +33,7 @@ const AccountCard = ({ title, subTitle, iconPath, isSelected, onClick }) => {
             fontSize: 13,
             fontWeight: 600,
             lineHeight: "21px",
-          }}
-        >
+          }}>
           {subTitle}
         </Typography>
       </Box>
