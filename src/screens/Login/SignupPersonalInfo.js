@@ -1,10 +1,12 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { MuiTextInput } from "../../components";
 import {
   Button,
   Checkbox,
   Divider,
   Grid,
+  IconButton,
+  InputAdornment,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -12,10 +14,22 @@ import Icon from "@mdi/react";
 import { mdiApple } from "@mdi/js";
 import google from "../../assets/Icon.png";
 import { useNavigate } from "react-router";
+import eye from "../../assets/svgIcons/eye.svg";
+import security from "../../assets/svgIcons/security.svg";
 
 const SignupPersonalInfo = () => {
   const navigate = useNavigate();
   const theme = useTheme();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordC, setShowPasswordC] = useState(false);
+
+  const onClickEye = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const onClickEyeC = () => {
+    setShowPasswordC(!showPasswordC);
+  };
 
   return (
     <Grid
@@ -120,19 +134,49 @@ const SignupPersonalInfo = () => {
           <MuiTextInput placeholder="Phone Number" />
         </Grid>
         <Grid item xxxs={12}>
-          <MuiTextInput placeholder="Password" />
+          <MuiTextInput
+            placeholder="Password"
+            type={showPassword ? "text" : "password"}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={onClickEye}>
+                    <img src={showPassword ? eye : security} alt="img" />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
         </Grid>
         <Grid item xxxs={12}>
-          <MuiTextInput placeholder="Confirm Password" />
+          <MuiTextInput
+            placeholder="Confirm Password"
+            type={showPassword ? "text" : "password"}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={onClickEyeC}>
+                    <img src={showPasswordC ? eye : security} alt="img" />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
         </Grid>
         <Grid
           item
           xxxs={12}
-          sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}>
           <Checkbox defaultChecked />
-          <Typography sx={{ color: "#5E6278", fontSize: 13 }}>
-            I Accept the
-            <span style={{ color: "#3E97FF", fontSize: 13 }}> Terms</span>
+          <Typography sx={{ color: "#5E6278", fontSize: 13, fontWeight: 600 }}>
+            I Accept the{" "}
+            <span style={{ color: "#3E97FF", fontSize: 13, fontWeight: 600 }}>
+              Terms
+            </span>
           </Typography>
         </Grid>
         <Grid item xxxs={12}>
