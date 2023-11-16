@@ -29,7 +29,11 @@ const TableContainer = () => {
       minWidth: 110,
       disableColumnMenu: true,
       renderCell: (params) => {
-        return <Typography sx={{ color: "#181C32" }}>{params.id}</Typography>;
+        return (
+          <Typography sx={{ color: "#181C32", fontSize: 14, fontWeight: 600 }}>
+            {params.id}
+          </Typography>
+        );
       },
     },
     {
@@ -99,70 +103,70 @@ const TableContainer = () => {
     {
       id: 148525,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Google",
       action: true,
     },
     {
       id: 458722,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Reddit",
       action: false,
     },
     {
       id: 158476,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Twitter",
       action: true,
     },
     {
       id: 687549,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Google",
       action: true,
     },
     {
       id: 845248,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Reddit",
       action: true,
     },
     {
       id: 258765,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Twitter",
       action: true,
     },
     {
       id: 875492,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Google",
       action: false,
     },
     {
       id: 587469,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Reddit",
       action: true,
     },
     {
       id: 254817,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Twitter",
       action: true,
     },
     {
       id: 125784,
       dateRemoved: "23 Sep 2023",
-      link: "https://google. com",
+      link: "https://google.com",
       source: "Google",
       action: true,
     },
@@ -340,8 +344,13 @@ const TableContainer = () => {
             }}></MuiTextInput>
         </Grid>
       </Grid>
-      <Grid sx={{ paddingTop: "30px" }}>
-        <TableComp columns={columns} rows={rows} checkboxSelection />
+      <Grid container sx={{ paddingTop: "30px" }}>
+        <TableComp
+          columns={columns}
+          rows={rows}
+          checkboxSelection
+          totalItems={rows.length}
+        />
       </Grid>
     </Box>
   );

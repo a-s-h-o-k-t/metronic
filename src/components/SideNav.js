@@ -65,7 +65,7 @@ const SideNav = ({ tabItems }) => {
           value={item.path}
           component={Link}
           to={item?.path}
-          icon={<img src={item.icon} alt="img" size={0.85} color="#A1A5B7" />}
+          icon={<img src={item.icon} alt="img" />}
           disableFocusRipple
           disableRipple
         />
