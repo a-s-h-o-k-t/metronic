@@ -5,9 +5,20 @@ import PropTypes from "prop-types";
 const StyledTextField = styled(TextField)(({ theme }) => ({
   width: "100%",
   "& .MuiInputBase-root": {
-    fontSize: 12,
-    borderRadius: "8px",
+    fontSize: "12px",
+    borderRadius: "6px",
     backgroundColor: theme.colors.white.primary,
+    color: "#7E8299",
+    fontWeight: 600,
+    lineHeight: "12px",
+    borderColor: "#E1E3EA",
+    "input::placeholder": {
+      fontSize: "12px",
+      color: "#7E8299",
+      fontWeight: 600,
+      lineHeight: "12px",
+      opacity: 1,
+    },
   },
   "& .MuiSelect-select": {
     display: "flex",
@@ -86,8 +97,7 @@ const MuiTextInput = ({
         },
         ...sx,
       }}
-      {...rest}
-    >
+      {...rest}>
       {isSelect &&
         selectItems.length &&
         selectItems.map((item, index) => {
@@ -105,7 +115,7 @@ const MuiTextInput = ({
 MuiTextInput.defaultProps = {
   variant: "outlined",
   isSelect: false,
-  required: true,
+  required: false,
 };
 MuiTextInput.propTypes = {
   required: PropTypes.bool,
