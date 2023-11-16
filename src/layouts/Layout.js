@@ -2,10 +2,11 @@ import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router";
 import { Loader, Stepper } from "../components";
 import { StyledContainer } from "./MainLayout";
-import { Box, styled, useTheme } from "@mui/material";
+import { Box, Typography, styled, useTheme } from "@mui/material";
 import EffectsImage from "../assets/auth-bg.png";
 import Logo from "../assets/svgIcons/Logo.svg";
 import { StyledStepperWrapper } from "../components/Stepper";
+import { Link } from "react-router-dom";
 
 const StyledLeftContainer = styled(Box)(({ theme }) => ({
   backgroundColor: "#006CEA",
@@ -120,15 +121,15 @@ const Layout = () => {
               justifyContent: "center",
               gap: 39,
             }}>
-            <a target="_blank" className="link" href="/">
+            <Typography target="_blank" className="link" component={Link}>
               Terms
-            </a>
-            <a target="_blank" className="link" href="/">
+            </Typography>
+            <Typography target="_blank" className="link" component={Link}>
               Plans
-            </a>
-            <a target="_blank" className="link" href="/">
+            </Typography>
+            <Typography target="_blank" className="link" component={Link}>
               Contact Us
-            </a>
+            </Typography>
           </div>
         </StyledLeftContainer>
         <StyledRightContainer flex={1}>
