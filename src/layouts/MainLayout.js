@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router";
-import { Box, Container, styled } from "@mui/material";
+import { Box, Container, styled, useTheme } from "@mui/material";
 import { AppBarComp, Loader, SideNav } from "../components";
 import home from "../assets/svgIcons/home.svg";
 import add_files from "../assets/svgIcons/add_files.svg";
@@ -16,6 +16,7 @@ export const StyledContainer = styled(Container)(() => ({
 }));
 
 const MainLayout = () => {
+  const theme = useTheme();
   const tabItems = [
     {
       path: "dashboard",
@@ -70,7 +71,14 @@ const MainLayout = () => {
     <StyledContainer maxWidth="xl" style={{ background: "grey" }}>
       <AppBarComp />
       <Box className="container">
-        <Box className="sideNav">
+        <Box
+          className="sideNav"
+          sx={{
+            [theme.breakpoints.down("md")]: {
+              display: "none",
+            },
+          }}
+        >
           <SideNav tabItems={tabItems} />
         </Box>
         <Box className="mainContent">

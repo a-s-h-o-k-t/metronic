@@ -33,20 +33,22 @@ const CardComp = ({ title, icon, subTitle, background, border }) => {
     <Card
       style={{
         padding: "28px",
-        width: "212px",
         height: "124px",
         boxShadow: "none",
         borderBottom: "3px solid",
         borderBottomColor: border,
         borderRadius: "12px",
-      }}>
+        flex: 1,
+      }}
+    >
       <StyledCard>
         <Grid
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-          }}>
+          }}
+        >
           <StyledTitle>{title}</StyledTitle>
           <Grid
             style={{
@@ -55,7 +57,8 @@ const CardComp = ({ title, icon, subTitle, background, border }) => {
               lineHeight: "0px",
               backgroundColor: background,
               borderRadius: "4px",
-            }}>
+            }}
+          >
             <img src={icon} alt="cardIcon" height={20} width={20} />
           </Grid>
         </Grid>

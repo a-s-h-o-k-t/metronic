@@ -2,7 +2,7 @@ import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material";
+import { styled, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
@@ -42,6 +42,7 @@ const StyledTab = styled(Tab)(({ theme }) => ({
 }));
 
 const SideNav = ({ tabItems }) => {
+  const theme = useTheme();
   const { pathname } = useLocation();
 
   const matchPath = (items = []) => {
@@ -78,10 +79,14 @@ const SideNav = ({ tabItems }) => {
       sx={{
         borderColor: "divider",
         height: "100%",
+        [theme.breakpoints.down("md")]: {
+          display: "none",
+        },
       }}
       display="flex"
       flexDirection="column"
-      justifyContent="space-between">
+      justifyContent="space-between"
+    >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <StyledTabs value={selectedTabValue} orientation="vertical">
           {getTabIconItems()}

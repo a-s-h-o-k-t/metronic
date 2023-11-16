@@ -69,7 +69,7 @@ const TableContainer = () => {
       renderCell: (params) => {
         return params.row.action === true ? (
           <Typography
-            style={{
+            sx={{
               fontSize: 12,
               fontWeight: 600,
               padding: "7px",
@@ -82,7 +82,7 @@ const TableContainer = () => {
           </Typography>
         ) : (
           <Typography
-            style={{
+            sx={{
               fontSize: 12,
               fontWeight: 600,
               padding: "7px",
@@ -172,12 +172,14 @@ const TableContainer = () => {
   ];
 
   return (
-    <Box flex={1} style={{ display: "flex", flexDirection: "column" }}>
+    <Box flex={1} sx={{ display: "flex", flexDirection: "column" }}>
       <Grid
-        style={{
+        sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          flexDirection: "row",
+          flexWrap: "wrap",
         }}
       >
         <MuiTextInput
@@ -199,11 +201,12 @@ const TableContainer = () => {
           }}
         />
         <Grid
-          style={{
+          sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             gap: "20px",
+            flexWrap: "wrap",
           }}
         >
           <MuiButton
@@ -219,7 +222,7 @@ const TableContainer = () => {
             }}
           />
           <Grid
-            style={{
+            sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -229,14 +232,14 @@ const TableContainer = () => {
             }}
           >
             <Typography
-              style={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
+              sx={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
             >
               Today
             </Typography>
             <Icon path={mdiChevronDown} color="#A1A5B7" size={1} />
           </Grid>
           <Grid
-            style={{
+            sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -246,7 +249,7 @@ const TableContainer = () => {
             }}
           >
             <Typography
-              style={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
+              sx={{ color: "#A1A5B7", fontSize: 13, fontWeight: 700 }}
             >
               Status
             </Typography>
@@ -254,7 +257,7 @@ const TableContainer = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid style={{ paddingTop: "30px" }}>
+      <Grid sx={{ paddingTop: "30px" }}>
         <TableComp columns={columns} rows={rows} />
       </Grid>
     </Box>
