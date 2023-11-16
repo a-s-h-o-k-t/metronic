@@ -58,7 +58,6 @@ const SideNav = ({ tabItems }) => {
     return tabItems.map((item, index) => {
       return (
         <StyledTab
-          sx={{ "& .MuiBadge-root": { paddingRight: "10px" } }}
           iconPosition="start"
           key={index}
           label={item.label}

@@ -106,7 +106,13 @@ const MainLayout = () => {
         <Box flex={1} sx={{ padding: "20px 0px", alignSelf: "center" }}>
           <img src={MetronicLogo} alt="metronicLogo" height={24} width={127} />
         </Box>
-        <Box className="sideNav">
+        <Box
+          className="sideNav"
+          sx={{
+            [theme.breakpoints.down("md")]: {
+              paddingTop: "0px",
+            },
+          }}>
           <SideNav tabItems={tabItems} />
         </Box>
       </Drawer>
